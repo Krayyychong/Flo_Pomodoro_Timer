@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flo/Pomodoro Timer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css" />
+    <script defer src = "render.js"></script>
+  </head>
+
+  <body>
+    <div class = "container">
+      <h1 id="title">Flo/Pomodoro Timer</h1>
+      <p id="info">Select your preferred function!</p>
+  
+      <div id="menu_container" class = "main-menu">
+        <button class = "image-button" onclick="pomoList()">
+          <img src = "images\pomodoro.png" alt ="Pomodoro Icon" class = "button-image" />
+          <span class = "button-label">Pomodoro</span>
+        </button>
+        
+        <button class = "image-button" onclick="flomo()">
+          <img src = "images\flomodoro.png" alt ="Flomodoro Icon" class = "button-image" />
+          <span class = "button-label">Flomodoro</span>
+        </button>
+  
+      </div>
+  
+      <div id="pomolist_container" class = "pomolist_container">
+        <button class = "pomo-button" onclick="countdownPomo(60, 30)">1 focus, 0.5 break</button>
+        <button class = "pomo-button" onclick="countdownPomo(1500, 300)">25 focus, 5 break</button>
+        <button class = "pomo-button" onclick="countdownPomo(2100, 300)" >35 focus, 5 break</button>
+        <button class = "pomo-button" onclick="countdownPomo(3000, 600)">50 focus, 10 break</button>
+        <button class = "pomo-button" onclick="countdownPomo(3600, 900)">60 focus, 15 break</button>
+        <button id = "backbtn" class = "pomo-button" onclick="returnToMainMenu()">Back</button>
+  
+      </div>
+  
+      <div id="pomodoro_container" class="pomodoro-container">
+        <div>
+          <img class="gif" id="pomo_gif" src = "images\study2.gif" />
+        </div>
+  
+        <div id="pomocountdown_display">
+          Pomodoro Starts!
+        </div>
+  
+        <div id="pomo_controls">
+          <button id="resetBtn" class="pomo-controls" onclick= "resetPomo()">Reset</button>
+          <button id="exitBtn" class="pomo-controls" onclick= "returnToMainMenu()">Return to Main Menu</button>
+        </div>
+      </div>
+  
+      <div id="flomodoro_container">
+        <div>
+          <img class="gif" id="flomo_gif" src = "images\study1.gif" />
+        </div>
+  
+        <div id="flomocountdown_display">
+          Flomodoro Start!
+        </div>
+  
+        <div id="flomo_controls" >
+          <div id ="take_break_control">
+            <button id="flomobreakBtn" class="flomo-controls" onclick= "breakFlomo()">Take a break</button>
+          </div>
+  
+          <button id="resetBtn" class="flomo-controls" onclick= "resetFlomo()">Reset</button>
+          <button id="exitBtn" class="flomo-controls" onclick= "returnToMainMenu()">Return to Main Menu</button>
+        </div>
+      </div>
+
+    </div>
+
+    
+  </body>
+</html>
